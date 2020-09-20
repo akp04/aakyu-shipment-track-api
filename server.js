@@ -82,6 +82,8 @@ let shippingbill;
       })
 }
 
+app.get('/', (req, res) => {res.send("working!")})
+
 app.post('/client/blno', (req, res) => {
     const {blno} = req.body;
     db('docs').where({
@@ -246,6 +248,6 @@ app.post('/admin/delete_entry', (req, res) => {
                         
 })
 
-app.listen(3001, () => {
-	console.log("app running on port 3001");
+app.listen(process.env.PORT || 3001, () => {
+	console.log( `app running on port ${process.env.PORT}`);
 });
