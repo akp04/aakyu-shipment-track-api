@@ -49,7 +49,7 @@ let shippingbill;
                     "VESSEL VOYAGE : " + data[0].transvesselname + "\n \n" +
                     "VESSEL DATE : " + data[0].transvesseldate + "\n \n" +
                     "ETA DESTINATION : " + data[0].eta + "\n \n" +
-                    "D/O : " + data[0].do + "\n \n";
+                    "D/O : " + data[0].d_o + "\n \n";
         
           var user = "customer@aakyushipping.com";
           var pass = "aakyushipping@321";
@@ -142,7 +142,7 @@ app.post('/admin/create_entry', (req, res) => {
         transvesselname:transhippmentvesselname,
         transvesseldate:transhippmentvesseldate,
         eta:eta,
-        do:d_o,
+        d_o:d_o,
         email:email
     })
     .then(data => {
@@ -215,7 +215,7 @@ app.post('/admin/update_entry', (req, res) => {
           transvesselname:transhippmentvesselname,
           transvesseldate:transhippmentvesseldate,
           eta:eta,
-          do:d_o,
+          d_o:d_o,
           email:email
         }).then(data => {
             //console.log("hey inside 2 - " + data);
