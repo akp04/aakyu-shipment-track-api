@@ -33,7 +33,8 @@ let shippingbill;
           sender_email = data[0].email;
 
         var text =  "BLNO : " + data[0].blno + "\n \n" +
-                    "COTAINER NO : " + data[0].cno + "\n \n" + 
+                    "COTAINER NO : " + data[0].cno + "\n \n" +
+                    "CUSTOM SEAL NO : " + data[0].customseal + "\n \n" + 
                     "SHIPPER : " + data[0].shipper + "\n \n" +
                     "PORT : " + data[0].port + "\n \n" +
                     "PKG : " + data[0].pkg + "\n \n" +
@@ -122,11 +123,12 @@ app.post('/admin/authenticate', (req, res) => {
 })
 
 app.post('/admin/create_entry', (req, res) => {
-    const {blno, email, cno, shipper, port, pkg, grosswt, shippingbill, stuffdate, portofloading, railoutdate, traino, wagono, sobdate, vesselname, transhippmentvesselname, transhippmentvesseldate, eta, d_o} = req.body;
+    const {blno, email, cno, customseal, shipper, port, pkg, grosswt, shippingbill, stuffdate, portofloading, railoutdate, traino, wagono, sobdate, vesselname, transhippmentvesselname, transhippmentvesseldate, eta, d_o} = req.body;
     
     db('docs').insert({
         blno: blno,
         cno:cno,
+        customseal:customseal,
         shipper:shipper,
         port:port,
         pkg:pkg,
@@ -194,12 +196,13 @@ app.post('/admin/ask_for_update_fill', (req, res) => {
 
 
 app.post('/admin/update_entry', (req, res) => {
-    const {blno, email, cno, shipper, port, pkg, grosswt, shippingbill, stuffdate, portofloading, railoutdate, traino, wagono, sobdate, vesselname, transhippmentvesselname, transhippmentvesseldate, eta, d_o} = req.body;
+    const {blno, email, cno, customseal, shipper, port, pkg, grosswt, shippingbill, stuffdate, portofloading, railoutdate, traino, wagono, sobdate, vesselname, transhippmentvesselname, transhippmentvesseldate, eta, d_o} = req.body;
 
         db('docs').where({
             blno:blno
         }).update({
           cno:cno,
+          customseal:customseal,
           shipper:shipper,
           port:port,
           pkg:pkg,
@@ -249,5 +252,5 @@ app.post('/admin/delete_entry', (req, res) => {
 })
 
 app.listen(process.env.PORT || 3001, () => {
-	console.log( `app running on port ${process.env.PORT}`);
+  console.log( `app running on port ${process.env.PORT}`);
 });
