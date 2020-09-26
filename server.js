@@ -47,7 +47,7 @@ let shippingbill;
                     "PORT OF LOADING : " + data[0].portofloading + "\n \n" +
                     "VESSEL VOYAGE : " + data[0].vesselname + "\n \n" +
                     "ON BOARD DATE : " + data[0].sobdate + "\n \n" +
-                    "VESSEL VOYAGE : " + data[0].transvesselname + "\n \n" +
+                    "TRANSHIPMENT VESSEL VOYAGE : " + data[0].transvesselname + "\n \n" +
                     "VESSEL DATE : " + data[0].transvesseldate + "\n \n" +
                     "ETA DESTINATION : " + data[0].eta + "\n \n" +
                     "D/O : " + data[0].d_o + "\n \n";
