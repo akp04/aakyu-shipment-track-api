@@ -53,7 +53,7 @@ let shippingbill;
                     "D/O : " + data[0].d_o + "\n \n";
         
           var user = "customer@aakyushipping.com";
-          var pass = "aakyushipping@321";
+          var pass = "xyz";
           //var body = "Hi bro";
          
         var transporter = nodemailer.createTransport({
